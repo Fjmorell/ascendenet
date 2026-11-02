@@ -9,7 +9,6 @@ import { type ReactNode, useEffect, useState } from 'react';
 const navItems = [
     { label: 'Tarifas', href: '/#tarifas' },
     { label: 'Cómo funciona', href: '/#como-funciona' },
-    { label: 'Próximamente', href: '/#proximamente' },
     { label: 'Preguntas', href: '/#preguntas' },
 ];
 

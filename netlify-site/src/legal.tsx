@@ -62,9 +62,6 @@ function Privacy() {
                     <strong>Solicitudes de llamada:</strong> nombre, teléfono, código postal, tarifa de interés y comentarios, para contactarte,
                     comprobar la cobertura y asesorarte sobre la contratación.
                 </li>
-                <li>
-                    <strong>Avisos de lanzamiento:</strong> tu email, para enviarte un único aviso cuando el servicio que elegiste esté disponible.
-                </li>
             </ul>
             <H2>Base legal</H2>
             <p>

@@ -1,7 +1,6 @@
 import CallbackForm from '@/components/callback-form';
 import SiteLayout from '@/components/site-layout';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import WaitlistForm from '@/components/waitlist-form';
 import { formatPrice, services, type Tariff } from '@/data/site';
 import { cn } from '@/lib/utils';
 import {
@@ -118,7 +117,7 @@ function Hero() {
                         return (
                             <a
                                 key={service.slug}
-                                href={service.status === 'active' ? '#tarifas' : '#proximamente'}
+                                href={service.status === 'active' ? '#tarifas' : '#contacto'}
                                 className="flex items-center gap-2 hover:text-white"
                             >
                                 <Icon className="size-4" />
@@ -357,40 +356,6 @@ function HowItWorks() {
     );
 }
 
-function ComingSoon() {
-    const upcoming = services.filter((s) => s.status === 'soon');
-
-    if (upcoming.length === 0) {
-        return null;
-    }
-
-    return (
-        <section id="proximamente" className="py-20 sm:py-24">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6">
-                <SectionHeading eyebrow="Próximamente" title="Muy pronto, todo tu hogar en un solo sitio">
-                    Estamos ampliando nuestros servicios. Apúntate y serás de los primeros en conocer las ofertas.
-                </SectionHeading>
-                <div className="grid gap-6 md:grid-cols-2">
-                    {upcoming.map((service) => {
-                        const Icon = serviceIcons[service.slug] ?? Zap;
-                        return (
-                            <article key={service.slug} className="bg-brand-navy relative overflow-hidden rounded-2xl p-8 text-white">
-                                <Icon aria-hidden className="absolute -top-6 -right-6 size-40 text-white/[0.04]" />
-                                <span className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 px-3 py-1 text-xs font-semibold text-amber-300 uppercase">
-                                    <Icon className="size-3.5" /> En preparación
-                                </span>
-                                <h3 className="font-display text-2xl font-bold">{service.headline ?? service.name}</h3>
-                                {service.description && <p className="mt-3 mb-7 leading-relaxed text-slate-300">{service.description}</p>}
-                                <WaitlistForm serviceName={service.name} />
-                            </article>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
-    );
-}
-
 function Faq() {
     const faqs = [
         {
@@ -411,12 +376,12 @@ function Faq() {
         },
         {
             q: '¿Cuándo tendréis luz y alarma?',
-            a: 'Estamos cerrando acuerdos para ofrecerlas muy pronto. Apúntate en la sección «Próximamente» y te avisaremos por email en cuanto estén disponibles.',
+            a: 'Estamos cerrando acuerdos para ofrecerlas muy pronto. Si te interesan, déjanos tus datos en el formulario de contacto y te avisaremos en cuanto estén disponibles.',
         },
     ];
 
     return (
-        <section id="preguntas" className="bg-slate-50 py-20 sm:py-24">
+        <section id="preguntas" className="py-20 sm:py-24">
             <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.6fr]">
                 <SectionHeading eyebrow="Preguntas frecuentes" title="Resolvemos tus dudas">
                     ¿No encuentras lo que buscas? Escríbenos y te respondemos personalmente.
@@ -439,7 +404,7 @@ function Faq() {
 
 function Contact() {
     return (
-        <section id="contacto" className="py-20 sm:py-24">
+        <section id="contacto" className="bg-slate-50 py-20 sm:py-24">
             <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr]">
                 <div>
                     <SectionHeading eyebrow="Contacto" title="¿Hablamos?">
@@ -473,7 +438,6 @@ export default function Home() {
             <Benefits />
             <Tariffs />
             <HowItWorks />
-            <ComingSoon />
             <Faq />
             <Contact />
         </SiteLayout>

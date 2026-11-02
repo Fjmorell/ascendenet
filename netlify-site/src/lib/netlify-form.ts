@@ -23,5 +23,3 @@ export function normalizePhone(phone: string): string {
 }
 
 export const isSpanishPhone = (phone: string) => /^(\+34|0034)?[6789]\d{8}$/.test(normalizePhone(phone));
-
-export const isEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());

@@ -20,7 +20,7 @@ export interface Service {
     name: string;
     headline: string;
     description: string;
-    /** "active" shows tariffs; "soon" shows a waitlist form. Remove the entry to hide it. */
+    /** "active" shows tariffs; "soon" only lists it as "Pronto" in the hero. Remove the entry to hide it. */
     status: 'active' | 'soon';
     tariffs: Tariff[];
 }
