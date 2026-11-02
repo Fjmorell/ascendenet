@@ -395,8 +395,8 @@ function ComingSoon({ services }: { services: Service[] }) {
 function Faq() {
     const faqs = [
         {
-            q: '¿Qué es exactamente AscendeNet?',
-            a: 'Somos agentes independientes. Te asesoramos sobre las tarifas disponibles en tu zona y tramitamos la contratación con el operador en tu nombre, para que no tengas que pelearte con centralitas.',
+            q: '¿Qué es AscendeNet?',
+            a: 'Somos agentes independientes. Te asesoramos sobre las tarifas disponibles en tu zona y tramitamos la contratación con el operador en tu nombre, para que no tengas que pelearte con operadores telefónicos.',
         },
         {
             q: '¿Cómo sé si tengo cobertura de fibra?',
