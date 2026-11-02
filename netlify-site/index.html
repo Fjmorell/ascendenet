@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AscendeNet — Fibra, móvil e internet para tu hogar</title>
+        <meta
+            name="description"
+            content="Agentes independientes de telecomunicaciones: comparamos y contratamos por ti fibra, móvil e internet rural o 4G/5G. Te confirmamos cobertura en menos de 24 horas."
+        />
+        <meta name="theme-color" content="#0B2545" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:site_name" content="AscendeNet" />
+        <meta property="og:title" content="AscendeNet — Fibra, móvil e internet para tu hogar" />
+        <meta property="og:description" content="Comparamos y contratamos por ti. Cobertura confirmada en menos de 24 h." />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    </head>
+    <body class="font-sans antialiased">
+        <div id="root"></div>
+
+        <!--
+            Netlify Forms detects forms in the static HTML at deploy time, not the ones React renders.
+            These hidden copies declare every field the real forms send; keep them in sync with src/lib/netlify-form.ts.
+        -->
+        <form name="contacto" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input name="bot-field" />
+            <input name="nombre" />
+            <input name="telefono" />
+            <input name="codigo_postal" />
+            <input name="tarifa" />
+            <input name="franja" />
+            <textarea name="comentarios"></textarea>
+            <input name="consentimiento" />
+            <input name="origen" />
+        </form>
+        <form name="lista-espera" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input name="bot-field" />
+            <input name="email" />
+            <input name="servicio" />
+            <input name="consentimiento" />
+        </form>
+
+        <script type="module" src="/src/main.tsx"></script>
+    </body>
+</html>
